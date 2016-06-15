@@ -1,0 +1,117 @@
+.row-centered {
+    text-align:center;
+}
+.col-centered {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align:left;
+    /* inline-block space fix */
+    margin-right:-4px;
+}
+.food-items {
+  background-color: #eee;
+}
+.row.section {
+  margin-left: 0px;
+  margin-right: 0px;
+  padding: 0px 100px;
+}
+.calorie-meter {
+  background-color: #01DDDD;
+}
+.food-card {
+  background: rgb(220, 215, 215);
+  box-shadow: none !important;
+}
+md-card md-card-title md-card-title-text {
+  display: inline-block;
+}
+.thumbnail {
+  border: 0px;
+  position: relative;
+  background-color: transparent;
+  border-radius: 0;
+}
+.thumbnail img {
+  margin-top: 10px;
+  max-width: 100%;
+  width: 100%;
+  height: 200px;
+}
+.calorie {
+  background-color: #39D1B4;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  font-weight: 200;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  width: 50px;
+  position: absolute;
+  top: -20px;
+  right: 12px;
+  display: none;
+}
+.food-info {
+  width: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  padding: 10px 12px;
+}
+.title, {
+  color: #444;
+  margin: 0;
+  font-size: 34px;
+  font-weight: 800;
+}
+.count {
+  background: #F65A5B;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 15px;
+  line-height: 40px;
+  min-width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  float: right;
+  text-align: center;
+  font-weight: 200;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: background 500ms;
+}
+.count:focus {
+  outline: none !important;
+}
+.count:hover, {
+  color: #F65A5B;
+  background: rgba(246, 90, 91, 0.25);
+  transition: background 500ms;
+}
+.check-box {
+  float: right;
+}
+
+md-toast {
+  position: fixed !important;
+      right: 0px;
+  }
+
+.calculate-calorie h1{
+  text-align: center;
+    color: white;
+    font-size: 60px;
+}
+.calculate-calorie, .total-calorie{
+  text-align: center;
+}
+
+.total-calorie h2{
+  text-align: center;
+    color: white;
+    font-size: 50px;
+}
