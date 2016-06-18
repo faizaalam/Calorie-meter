@@ -76,6 +76,48 @@ app.controller('mainController' , ['$scope' ,'$mdPainLessToast', function($scope
   count: 0,
   checked: false
 },
+{
+name: 'Boot',
+calories: 200,
+cover: 'http://le-mugs.com/wp-content/themes/mugs/images/3a.png',
+count: 0,
+checked: false
+},
+{
+name: 'Boot',
+calories: 200,
+cover: 'http://le-mugs.com/wp-content/themes/mugs/images/3a.png',
+count: 0,
+checked: false
+},
+{
+name: 'Boot',
+calories: 200,
+cover: 'http://le-mugs.com/wp-content/themes/mugs/images/3a.png',
+count: 0,
+checked: false
+},
+{
+name: 'Boot',
+calories: 200,
+cover: 'http://le-mugs.com/wp-content/themes/mugs/images/3a.png',
+count: 0,
+checked: false
+},
+{
+name: 'Boot',
+calories: 200,
+cover: 'http://le-mugs.com/wp-content/themes/mugs/images/3a.png',
+count: 0,
+checked: false
+},
+{
+name: 'Boot',
+calories: 200,
+cover: 'http://le-mugs.com/wp-content/themes/mugs/images/3a.png',
+count: 0,
+checked: false
+},
     {
   name: 'Ice Cream',
   calories: 500,
@@ -101,8 +143,8 @@ app.controller('mainController' , ['$scope' ,'$mdPainLessToast', function($scope
 
         return total;
     };
-    $scope.show = function() {
-      $mdPainLessToast.show('Item added to calorie counter')
+    $scope.show1 = function() {
+      $mdPainLessToast.show('1 Item added to calorie counter')
     };
     $scope.myVar = false;
     $scope.myVarTrue = true;
@@ -110,7 +152,15 @@ app.controller('mainController' , ['$scope' ,'$mdPainLessToast', function($scope
         $scope.myVar = !$scope.myVar;
         $scope.myVarTrue = !$scope.myVarTrue;
     };
-
+    $scope.show2 = function() {
+      $mdPainLessToast.show('1 Item deleted from calorie counter')
+    };
+    $scope.myVar = false;
+    $scope.myVarTrue = true;
+    $scope.toggle = function() {
+        $scope.myVar = !$scope.myVar;
+        $scope.myVarTrue = !$scope.myVarTrue;
+    };
 }]);
 
 

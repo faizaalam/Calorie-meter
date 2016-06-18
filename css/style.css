@@ -74,15 +74,33 @@ md-card md-card-title md-card-title-text {
   cursor: pointer;
   display: inline-block;
   font-size: 15px;
-  line-height: 40px;
-  min-width: 40px;
-  height: 40px;
+  line-height: 30px;
+  min-width: 30px;
+  height: 30px;
   border-radius: 50%;
   float: right;
   text-align: center;
   font-weight: 200;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   transition: background 500ms;
+  margin: 0px;
+}
+.calorie-count {
+  background: transparent;
+  color:#000000;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 15px;
+  line-height: 30px;
+  min-width: 30px;
+  height: 30px;
+
+  float: right;
+  text-align: center;
+  font-weight: 200;
+
+  transition: background 500ms;
+  margin: 0px;
 }
 .count:focus {
   outline: none !important;

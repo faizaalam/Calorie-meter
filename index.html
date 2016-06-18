@@ -21,7 +21,7 @@
     <div class="" ng-app="myApp">
       <div class="" ng-controller="mainController" id="fullpage">
         <div class="row food-items section">
-          <div ng-repeat="item in items.slice(0,4)">
+          <div ng-repeat="item in items.slice(0,8)">
 
             <div class="thumbnail col-sm-12 col-md-3 col-lg-3">
               <md-card class="food-card wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
@@ -29,10 +29,9 @@
                 <md-card-title>
                   <md-card-title-text>
                     <span class="md-headline title">{{item.name}}</span>
-                    <md-button class="count" ng-click="plusOne($index); show()">
-                      + {{ item.count}}
-
-                    </md-button>
+                    <md-button class="count" ng-click="plusOne($index); show1()"> + </md-button>
+                    <span class="calorie-count">{{ item.count}} </span>
+                    <md-button class="count" ng-click="minusOne($index ); show2()"> - </md-button>
                   </md-card-title-text>
                 </md-card-title>
                 <md-card-actions layout="row" layout-align="start center">
@@ -53,7 +52,7 @@
           </div>
         </div>
         <div class="row food-items section">
-          <div ng-repeat="item in items.slice(4, 8) ">
+          <div ng-repeat="item in items.slice(8, 16) ">
 
             <div class="thumbnail col-sm-12 col-md-3 col-lg-3 wow fadeInRight">
               <md-card class="food-card wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
@@ -61,10 +60,9 @@
                 <md-card-title>
                   <md-card-title-text>
                     <span class="md-headline title">{{item.name}}</span>
-                    <md-button class="count" ng-click="plusOne($index + 4); show()">
-                      + {{ item.count}}
-
-                    </md-button>
+                    <md-button class="count" ng-click="plusOne($index + 8); show1()"> + </md-button>
+                    <span class="calorie-count">{{ item.count}} </span>
+                    <md-button class="count" ng-click="minusOne($index + 8); show2()"> - </md-button>
                   </md-card-title-text>
                 </md-card-title>
                 <md-card-actions layout="row" layout-align="start center">
@@ -76,7 +74,7 @@
             </div>
           </div>
         </div>
-        <div class="row food-items section">
+        <!-- <div class="row food-items section">
           <div ng-repeat="item in items.slice(8,11)">
 
             <div class="thumbnail col-sm-12 col-md-3 col-lg-3">
@@ -107,7 +105,7 @@
             </div>
 
           </div>
-        </div>
+        </div> -->
         <div class="row calorie-meter section row-centered">
           <div class="col-sm-12 col-md-10 col-lg-10 col-centered">
             <div class="calculate-calorie" ng-hide="myVar" >
@@ -115,7 +113,8 @@
               <md-button class="md-raised calculate-button" ng-click="toggle()"> Calculate</md-button>
             </div>
 
-            <div class="total-calorie" ng-hide="myVarTrue"><h2>You have consumed {{total()}} calories today.</h2></div>
+            <div class="total-calorie" ng-hide
+            ="myVarTrue"><h2>You have consumed {{total()}} calories today.</h2></div>
           </div>
         </div>
 
