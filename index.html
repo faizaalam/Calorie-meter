@@ -37,73 +37,44 @@
           <div ng-controller="AppCtrl" layout="row" ng-cloak>
             <md-content class="col-md-offset-2 col-md-8 col-sm-12 col-lg-8" layout="column" layout-align="center center">
 
-                <div class="form-group row">
-                  <label class="col-sm-2 form-control-label">Age</label>
-                  <div class="col-sm-10">
-                    <input type="number" class="form-control" ng-model="user.age"  placeholder="Your Age">
-                  </div>
+              <div class="form-group row">
+                <label class="col-sm-2 form-control-label">Age</label>
+                <div class="col-sm-10">
+                  <input type="number" class="form-control" ng-model="user.age" placeholder="Your Age">
                 </div>
-                <div class="form-group row">
-                  <labelclass="col-sm-2 form-control-label">Weight</label>
+              </div>
+              <div class="form-group row">
+                <labelclass="col-sm-2 form-control-label">Weight</label>
                   <div class="col-sm-10">
-                    <input type="number" class="form-control"  ng-model="user.weight" placeholder="Weight">
+                    <input type="number" class="form-control" ng-model="user.weight" placeholder="Weight">
                     <span>Kg</span>
                   </div>
-                </div>
-                <div class="form-group row">
-                  <label  class="col-sm-2 form-control-label">Height</label>
-                  <div class="col-sm-5">
-                    <select class="form-control" ng-options="option for option in sizes"
-                    ng-model="user.feet"
-                    ng-change="user.feetChanged()"> {{option}}
-                    </select>
+              </div>
 
+              <div class="form-group row" layout="row">
+                <label class="col-sm-2">Gender</label>
+                <div class="col-sm-10">
+                  <div class="radio-inline">
+                    <label class="radio-inline">
+                      <input type="radio" value="Female" checked ng-model="user.gender"> Female
+                    </label>
                   </div>
-                  <div class="col-sm-5">
-
-                    <select class="form-control" ng-options="option for option in inches"
-                    ng-model="user.inch"
-                    ng-change="user.inchChanged()"> {{option}}
-                    </select>
+                  <div class="radio-inline">
+                    <label class="radio-inline">
+                      <input type="radio" value="Male" ng-model="user.gender"> Male
+                    </label>
                   </div>
                 </div>
-                <div class="form-group row" layout="row">
-                  <label class="col-sm-2">Gender</label>
-                  <div class="col-sm-10">
-                    <div class="radio-inline">
-                      <label class="radio-inline">
-                        <input type="radio"  value="Female" checked ng-model="user.gender"> Female
-                      </label>
-                    </div>
-                    <div class="radio-inline">
-                      <label class="radio-inline">
-                        <input type="radio"  value="Male" ng-model="user.gender"> Male
-                      </label>
-                    </div>
-
-                  </div>
+              </div>
+              <div class="form-group row">
+                <label class="col-sm-2 form-control-label">Activity Level</label>
+                <div class="col-sm-10">
+                  <select class="form-control" ng-options="option for option in activities" ng-model="user.activity" ng-change="user.activityChanged()"> {{option}}
+                  </select>
                 </div>
-                <div class="form-group row">
-                  <label  class="col-sm-2 form-control-label">Activity Level</label>
-                  <div class="col-sm-10">
-
-                    <select  class="form-control" ng-options="option for option in activities"
-        ng-model="user.activity"
-        ng-change="user.activityChanged()"> {{option}}
-</select>
-                  </div>
-
-                </div>
-                <input type="submit" ng-click="update(user)" value="Save" />
-
+              </div>
             </md-content>
-
-
-
-                      <pre>user = {{user | json}}</pre>
-
           </div>
-
         </div>
 
         <div class="row food-items section" ng-controller="mainController">
@@ -114,7 +85,6 @@
                 <md-card-title>
                   <md-card-title-text>
                     <span class="md-headline title">{{item.name}}</span>
-
                     <md-button class="count" ng-click="plusOne($index); show1()"> + </md-button>
                     <span class="calorie-count">{{ item.count}} </span>
                     <md-button class="count" ng-click="minusOne($index ); show2()"> - </md-button>
@@ -167,28 +137,60 @@
         </div>
         <div class="row section burn-calorie" ng-controller="mainController">
 
-            <div class="col-sm-12 col-md-6 col-lg-6 " style="border-right: 2px solid white;">
-              <div id="walking-robot">
-                <div class="head"></div>
-                <div class="arm l"><div><div></div></div></div>
-                <div class="leg l"><div><div></div></div></div>
-                <div class="leg r"><div><div></div></div></div>
-                <div class="arm r"><div><div></div></div></div>
+          <div class="col-sm-12 col-md-6 col-lg-6 " style="border-right: 2px solid white;">
+            <div id="walking-robot">
+              <div class="head"></div>
+              <div class="arm l">
+                <div>
+                  <div></div>
+                </div>
               </div>
-              <div class="walking-shadow"></div>
-              <div class="burning-activity">You should walk 10 minutes to burn excess calories.</div>
-            </div>
-            <div class="col-sm-12 col-md-6 col-lg-6 " style="border-left: 2px solid white;">
-              <div id="running-robot">
-                <div class="head"></div>
-                <div class="arm l"><div><div></div></div></div>
-                <div class="leg l"><div><div></div></div></div>
-                <div class="leg r"><div><div></div></div></div>
-                <div class="arm r"><div><div></div></div></div>
+              <div class="leg l">
+                <div>
+                  <div></div>
+                </div>
               </div>
-              <div class="running-shadow"></div>
-              <div class="burning-activity">You should walk 10 minutes to burn excess calories.</div>
+              <div class="leg r">
+                <div>
+                  <div></div>
+                </div>
+              </div>
+              <div class="arm r">
+                <div>
+                  <div></div>
+                </div>
+              </div>
             </div>
+            <div class="walking-shadow"></div>
+            <div class="burning-activity">You should walk 10 minutes to burn excess calories.</div>
+          </div>
+          <div class="col-sm-12 col-md-6 col-lg-6 " style="border-left: 2px solid white;">
+            <div id="running-robot">
+              <div class="head"></div>
+              <div class="arm l">
+                <div>
+                  <div></div>
+                </div>
+              </div>
+              <div class="leg l">
+                <div>
+                  <div></div>
+                </div>
+              </div>
+              <div class="leg r">
+                <div>
+                  <div></div>
+                </div>
+              </div>
+              <div class="arm r">
+                <div>
+                  <div></div>
+                </div>
+              </div>
+            </div>
+            <div class="running-shadow"></div>
+            <div class="burning-activity">You should walk 10 minutes to burn excess calories.</div>
+          </div>
 
         </div>
 

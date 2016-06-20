@@ -142,41 +142,8 @@ app.controller('mainController', ['$scope', '$mdPainLessToast', function($scope,
 app.controller('AppCtrl', ['$scope', function($scope) {
   $scope.user = {};
 
-
-    $scope.sizes = [
-      "1",
-      "2",
-      "3",
-      "4",
-      "5",
-      "6",
-      "7"
-    ];
-    $scope.inches = [
-      "1",
-      "2",
-      "3",
-      "4",
-      "5",
-      "6",
-      "7",
-      "8",
-      "9",
-      "10",
-      "11",
-      "12"
-
-    ];
-// $scope.Math = window.Math;
-//      $scope.height = function(feet,inch) {
-//
-// var height = $scope.Math((feet * 12)) ;
-//        return height;
-//      };
-
   $scope.activities = [
-    "Sedentary", "Light Active", "Moderately Active", "Very Active", "Extra Active"
-
+    "Sedentary", "Moderately Active", "Active",
   ];
 
 }]);
