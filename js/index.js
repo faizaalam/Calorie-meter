@@ -139,57 +139,56 @@ app.controller('mainController', ['$scope', '$mdPainLessToast', function($scope,
   };
 }]);
 
-app.controller('AppCtrl', function($scope) {
-  $scope.user = {
-    description: 'Nuclear Missile Defense System',
-    rate: 500
-  };
-  $scope.data = {
-    group3: 'avatar-1'
-  };
-  $scope.avatarData = [{
-    id: "avatars:svg-1",
-    title: 'Male',
-    value: 'Male'
-  }, {
-    id: "avatars:svg-2",
-    title: 'Female',
-    value: 'Female'
-  }];
-  $scope.sizes = [
-    "1",
-    "2",
-    "3",
-    "4",
-    "5",
-    "6",
-    "7"
-  ];
-  $scope.inches = [
-    "1",
-    "2",
-    "3",
-    "4",
-    "5",
-    "6",
-    "7",
-    "8",
-    "9",
-    "10",
-    "11",
-    "12"
+app.controller('AppCtrl', ['$scope', function($scope) {
+  $scope.user = {};
 
-  ];
-  $scope.units = [
-    "kg",
-    "lb"
 
-  ];
+    $scope.sizes = [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ];
+    $scope.inches = [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12"
+
+    ];
+// $scope.Math = window.Math;
+//      $scope.height = function(feet,inch) {
+//
+// var height = $scope.Math((feet * 12)) ;
+//        return height;
+//      };
+
   $scope.activities = [
     "Sedentary", "Light Active", "Moderately Active", "Very Active", "Extra Active"
 
   ];
+
 });
+  $scope.master = {};
+      $scope.update = function(user) {
+        $scope.master = angular.copy(user);
+      };
+      $scope.reset = function() {
+         $scope.user = angular.copy($scope.master);
+      };
+     $scope.reset();
+}]);
 
 
 
