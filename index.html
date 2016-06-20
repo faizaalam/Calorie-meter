@@ -19,50 +19,171 @@
 <body layout="column">
   <md-content layout-padding>
     <div class="" ng-app="myApp">
-      <div class="" ng-controller="mainController" id="fullpage">
-        <div class="row food-items section">
-          <div ng-repeat="item in items.slice(0,8)">
+      <div class="" id="fullpage">
+        <div class="banner-bg section">
+          <div class="row">
+            <div class="col-md-offset-2 col-md-8 col-sm-12 col-lg-8">
+              <h2 class="wow bounceIn main-text"> Ramadan Calorie Meter </h2>
+              <h4>Presented by</h4>
+              <div class="logo-container">
+                <a href="http://thedailystar.net/" target="_blank" rel="noopener noreferrer">
+                  <img src="http://fathersday.webable.digital/wp-content/themes/fathersday/images/tds-logo-white.png" style="margin-bottom: 10px; width: 30%;">
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="counter-info section row">
+          <div ng-controller="AppCtrl" layout="row" ng-cloak>
+            <md-content class="col-md-offset-2 col-md-8 col-sm-12 col-lg-8" layout="column" layout-align="center center">
+              <!-- <form name="calorieForm" style="display:none;">
+                <md-input-container class="md-block" >
+                  <label>Age</label>
+                  <input ng-model="user.age" class="input_form">
+                  <div ng-messages="calorieForm.age.$error">
+                    <div ng-message="required">This is required.</div>
+                    <div ng-message="md-maxlength">Please input a number</div>
+                  </div>
+                </md-input-container>
+                <md-input-container class="md-block gender">
+                  <label>Gender</label>
+                  <md-radio-group ng-model="data.group3" layout="row">
+                   <md-radio-button ng-repeat="it in avatarData" ng-value="it.value">
+                     {{it.value}}
+                   </md-radio-button>
+                 </md-radio-group>
+                  <div ng-messages="calorieForm.gender.$error">
+                    <div ng-message="required">This is required.</div>
+                  </div>
+                </md-input-container>
 
+                <md-input-container layout="row" >
+                  <label>Height</label>
+                  <md-input-container >
+                  <label>Feet</label>
+                  <md-select ng-model="feet">
+                    <md-option ng-repeat="feet in sizes" value="{{feet}}">{{feet}}</md-option>
+                  </md-select>
+                      </md-input-container>
+                      <md-input-container >
+                  <label>Inch</label>
+                  <md-select ng-model="inch">
+                    <md-option ng-repeat="inch in inches" value="{{inch}}">{{inch}}</md-option>
+                  </md-select>
+                </md-input-container>
+              </md-input-container>
+                <md-input-container class="md-block gender">
+                  <label>Weight</label>
+                  <input ng-model="user.weight" class="input_form">
+                  <md-select ng-model="unit">
+                    <md-option ng-repeat="unit in units" value="{{unit}}">{{unit}}</md-option>
+                  </md-select>
+                </md-input-container>
+                <md-input-container class="md-block gender">
+                  <label>Activity Level</label>
+                  <md-select ng-model="activity">
+                    <md-option ng-repeat="activity in activities" value="{{activity}}">{{activity}}</md-option>
+                  </md-select>
+                </md-input-container>
+              </form> -->
+              <form name="calorieForm" layout="column" layout-padding class="calorieForm">
+                <div class="form-group row">
+                  <label for="inputEmail3" class="col-sm-2 form-control-label">Age</label>
+                  <div class="col-sm-10">
+                    <input type="number" class="form-control" ng-model="user.age" placeholder="Your Age">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="inputPassword3" class="col-sm-2 form-control-label">Weight</label>
+                  <div class="col-sm-10">
+                    <input type="number" class="form-control" ng-model="user.weight" placeholder="Weight">
+                    <span>Kg</span>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="inputPassword3" class="col-sm-2 form-control-label">Height</label>
+                  <div class="col-sm-5">
+                    <select class="form-control" ng-model="user.height.ft">
+                      <option ng-repeat="feet in sizes" value="{{feet}}">{{feet}}</option>
+
+                    </select>
+
+                  </div>
+                  <div class="col-sm-5">
+                    <select class="form-control" ng-model="user.height.in">
+                      <option ng-repeat="inch in inches" value="{{inch}}">{{inch}}</option>
+
+                    </select>
+
+                  </div>
+                </div>
+                <div class="form-group row" layout="row">
+                  <label class="col-sm-2">Gender</label>
+                  <div class="col-sm-10">
+                    <div class="radio-inline">
+                      <label class="radio-inline">
+                        <input type="radio" name="gridRadios" id="gridRadios1" value="option1" checked> Female
+                      </label>
+                    </div>
+                    <div class="radio-inline">
+                      <label class="radio-inline">
+                        <input type="radio" name="gridRadios" id="gridRadios2" value="option2"> Male
+                      </label>
+                    </div>
+
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="inputPassword3" class="col-sm-2 form-control-label">Activity Level</label>
+                  <div class="col-sm-10">
+                    <select class="form-control">
+                      <option ng-repeat="activity in activities" value="{{activity}}">{{activity}}</option>
+
+                    </select>
+                  </div>
+                </div>
+              </form>
+            </md-content>
+          </div>
+        </div>
+
+        <div class="row food-items section" ng-controller="mainController">
+          <div ng-repeat="item in items.slice(0,8)">
             <div class="thumbnail col-sm-12 col-md-3 col-lg-3">
               <md-card class="food-card wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
                 <img ng-src="{{item.cover}}">
                 <md-card-title>
                   <md-card-title-text>
                     <span class="md-headline title">{{item.name}}</span>
+
                     <md-button class="count" ng-click="plusOne($index); show1()"> + </md-button>
                     <span class="calorie-count">{{ item.count}} </span>
                     <md-button class="count" ng-click="minusOne($index ); show2()"> - </md-button>
+                    <span class="amount">{{item.amount}}</span>
                   </md-card-title-text>
                 </md-card-title>
                 <md-card-actions layout="row" layout-align="start center">
                   <div class="food-info">
-
                     <p class="calorie">{{ item.calories }}</p>
-
-
-
                   </div>
-
                 </md-card-actions>
-
               </md-card>
-
             </div>
-
           </div>
         </div>
-        <div class="row food-items section">
+        <div class="row food-items section" ng-controller="mainController">
           <div ng-repeat="item in items.slice(8, 16) ">
-
             <div class="thumbnail col-sm-12 col-md-3 col-lg-3 wow fadeInRight">
               <md-card class="food-card wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
                 <img ng-src="{{item.cover}}">
                 <md-card-title>
                   <md-card-title-text>
                     <span class="md-headline title">{{item.name}}</span>
+
                     <md-button class="count" ng-click="plusOne($index + 8); show1()"> + </md-button>
                     <span class="calorie-count">{{ item.count}} </span>
                     <md-button class="count" ng-click="minusOne($index + 8); show2()"> - </md-button>
+                    <span class="amount">{{item.amount}}</span>
                   </md-card-title-text>
                 </md-card-title>
                 <md-card-actions layout="row" layout-align="start center">
@@ -74,57 +195,46 @@
             </div>
           </div>
         </div>
-        <!-- <div class="row food-items section">
-          <div ng-repeat="item in items.slice(8,11)">
-
-            <div class="thumbnail col-sm-12 col-md-3 col-lg-3">
-              <md-card class="food-card wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
-                <img ng-src="{{item.cover}}">
-                <md-card-title>
-                  <md-card-title-text>
-                    <span class="md-headline title">{{item.name}}</span>
-                    <md-button class="count" ng-click="plusOne($index + 8); show()">
-                      + {{ item.count}}
-
-                    </md-button>
-                  </md-card-title-text>
-                </md-card-title>
-                <md-card-actions layout="row" layout-align="start center">
-                  <div class="food-info">
-
-                    <p class="calorie">{{ item.calories }}</p>
-
-
-
-                  </div>
-
-                </md-card-actions>
-
-              </md-card>
-
-            </div>
-
-          </div>
-        </div> -->
-        <div class="row calorie-meter section row-centered">
+        <div class="row calorie-meter section row-centered" ng-controller="mainController">
           <div class="col-sm-12 col-md-10 col-lg-10 col-centered">
-            <div class="calculate-calorie" ng-hide="myVar" >
+            <div class="calculate-calorie" ng-hide="myVar">
               <h1>Calculate the total calorie intake!</h1>
               <md-button class="md-raised calculate-button" ng-click="toggle()"> Calculate</md-button>
             </div>
-
-            <div class="total-calorie" ng-hide
-            ="myVarTrue"><h2>You have consumed {{total()}} calories today.</h2></div>
+            <div class="total-calorie" ng-hide="myVarTrue">
+              <h2>You have consumed {{total()}} calories today.</h2>
+            </div>
           </div>
         </div>
+        <div class="row section burn-calorie" ng-controller="mainController">
 
+            <div class="col-sm-12 col-md-6 col-lg-6 " style="border-right: 2px solid white;">
+              <div id="walking-robot">
+                <div class="head"></div>
+                <div class="arm l"><div><div></div></div></div>
+                <div class="leg l"><div><div></div></div></div>
+                <div class="leg r"><div><div></div></div></div>
+                <div class="arm r"><div><div></div></div></div>
+              </div>
+              <div class="walking-shadow"></div>
+              <div class="burning-activity">You should walk 10 minutes to burn excess calories.</div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-6 " style="border-left: 2px solid white;">
+              <div id="running-robot">
+                <div class="head"></div>
+                <div class="arm l"><div><div></div></div></div>
+                <div class="leg l"><div><div></div></div></div>
+                <div class="leg r"><div><div></div></div></div>
+                <div class="arm r"><div><div></div></div></div>
+              </div>
+              <div class="running-shadow"></div>
+              <div class="burning-activity">You should walk 10 minutes to burn excess calories.</div>
+            </div>
+
+        </div>
 
       </div>
-      <div ng-controller="AppCtrl" layout-fill="" layout="column" class="inset toastdemoBasicUsage section">
-
-
-
-
+      <div layout-fill="" layout="column" class="inset toastdemoBasicUsage section">
         <script type="text/ng-template" id="toast-template.html">
           <md-toast>
             <span flex>Custom toast!</span>
@@ -136,20 +246,18 @@
       </div>
     </div>
   </md-content>
-    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.js'></script>
-    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-animate.min.js'></script>
-    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-route.min.js'></script>
-    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-aria.min.js'></script>
-    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-messages.min.js'></script>
-    <script src='https://rawgit.com/angular/bower-material/master/angular-material.js'></script>
-    <script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-114/assets-cache.js'></script>
-    <script src="js/index.js"></script>
-    <script src="js/scroll.js"></script>
-    <script src="js/jquery.fullpage.js"></script>
-    <script src="js/jquery.fullpage.min.js"></script>
-    <script src="js/wow.min.js"></script>
-
-
+  <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.js'></script>
+  <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-animate.min.js'></script>
+  <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-route.min.js'></script>
+  <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-aria.min.js'></script>
+  <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-messages.min.js'></script>
+  <script src='https://rawgit.com/angular/bower-material/master/angular-material.js'></script>
+  <script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-114/assets-cache.js'></script>
+  <script src="js/index.js"></script>
+  <script src="js/scroll.js"></script>
+  <script src="js/jquery.fullpage.js"></script>
+  <script src="js/jquery.fullpage.min.js"></script>
+  <script src="js/wow.min.js"></script>
 
 </body>
 
