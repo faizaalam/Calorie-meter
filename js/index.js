@@ -143,8 +143,227 @@ app.controller('AppCtrl', ['$scope', function($scope) {
   $scope.user = {};
 
   $scope.activities = [
-    "Sedentary", "Moderately Active", "Active",
+    "Not Active", "Moderately Active", "Very Active",
   ];
+  $scope.ageGroup = ['2-3', '4-8', '9-13', '14-18', '19-30', '31-50', '51 and older'];
+
+//   $scope.calorieNeedboy = [
+//     {
+//       gender: Male,
+//     activity: 'Not Active',
+//     {
+//       age: 2 - 3,
+//
+//       calorie_needed: 1000-1200
+//     }, {
+//       age: 4 - 8,
+//
+//       calorie_needed: 1200-1400
+//     }, {
+//       age: 9 - 13,
+//
+//       calorie_needed: 1600-2000
+//     }, {
+//       age: 14 - 18,
+//
+//       calorie_needed: 2000-2400
+//     }, {
+//       age: 19 - 30,
+//
+//       calorie_needed: 2400-2600
+//     }, {
+//       age: 30-51,
+//
+//       calorie_needed: 2200-2400
+//     },
+//
+//     {
+//       age: 51 and older,
+//
+//       calorie_needed: 2000-2200
+//     }
+//   },
+//   {
+//     gender: Male,
+//   activity: 'Moderately Active',
+//   {
+//     age: 2 - 3,
+//
+//     calorie_needed: 1000-1400
+//   }, {
+//     age: 4 - 8,
+//
+//     calorie_needed: 1400-1600
+//   }, {
+//     age: 9 - 13,
+//
+//     calorie_needed: 1800-2200
+//   }, {
+//     age: 14 - 18,
+//
+//     calorie_needed: 2400-2800
+//   }, {
+//     age: 19 - 30,
+//
+//     calorie_needed: 2600-2800
+//   }, {
+//     age: 30-51,
+//
+//     calorie_needed: 2400-2600
+//   },
+//
+//   {
+//     age: 51 and older,
+//
+//     calorie_needed: 2200-2400
+//   }
+// },
+// {
+//   gender: Male,
+// activity: 'Very Active',
+// {
+//   age: 2 - 3,
+//
+//   calorie_needed: 1000-1400
+// }, {
+//   age: 4 - 8,
+//
+//   calorie_needed: 1600-2000
+// }, {
+//   age: 9 - 13,
+//
+//   calorie_needed: 2000-2600
+// }, {
+//   age: 14 - 18,
+//
+//   calorie_needed: 2800-3200
+// }, {
+//   age: 19 - 30,
+//
+//   calorie_needed: 3000
+// }, {
+//   age: 30-51,
+//
+//   calorie_needed: 2800-3000
+// },
+//
+// {
+//   age: 51 and older,
+//
+//   calorie_needed: 2400-2800
+// }
+// }
+//
+//   ];
+//
+//   $scope.calorieNeedgirl = [
+//     {
+//       gender: Feale,
+//     activity: 'Not Active',
+//     {
+//       age: 2 - 3,
+//
+//       calorie_needed: 1000-1200
+//     }, {
+//       age: 4 - 8,
+//
+//       calorie_needed: 1200-1400
+//     }, {
+//       age: 9 - 13,
+//
+//       calorie_needed: 1600-2000
+//     }, {
+//       age: 14 - 18,
+//
+//       calorie_needed: 2000-2400
+//     }, {
+//       age: 19 - 30,
+//
+//       calorie_needed: 2400-2600
+//     }, {
+//       age: 30-51,
+//
+//       calorie_needed: 2200-2400
+//     },
+//
+//     {
+//       age: 51 and older,
+//
+//       calorie_needed: 2000-2200
+//     }
+//   },
+//   {
+//     gender: Female,
+//   activity: 'Moderately Active',
+//   {
+//     age: 2 - 3,
+//
+//     calorie_needed: 1000-1400
+//   }, {
+//     age: 4 - 8,
+//
+//     calorie_needed: 1400-1600
+//   }, {
+//     age: 9 - 13,
+//
+//     calorie_needed: 1800-2200
+//   }, {
+//     age: 14 - 18,
+//
+//     calorie_needed: 2400-2800
+//   }, {
+//     age: 19 - 30,
+//
+//     calorie_needed: 2600-2800
+//   }, {
+//     age: 30-51,
+//
+//     calorie_needed: 2400-2600
+//   },
+//
+//   {
+//     age: 51 and older,
+//
+//     calorie_needed: 2200-2400
+//   }
+// },
+// {
+//   gender: Female,
+// activity: 'Very Active',
+// {
+//   age: 2 - 3,
+//
+//   calorie_needed: 1000-1400
+// }, {
+//   age: 4 - 8,
+//
+//   calorie_needed: 1600-2000
+// }, {
+//   age: 9 - 13,
+//
+//   calorie_needed: 2000-2600
+// }, {
+//   age: 14 - 18,
+//
+//   calorie_needed: 2800-3200
+// }, {
+//   age: 19 - 30,
+//
+//   calorie_needed: 3000
+// }, {
+//   age: 30-51,
+//
+//   calorie_needed: 2800-3000
+// },
+//
+// {
+//   age: 51 and older,
+//
+//   calorie_needed: 2400-2800
+// }
+// }
+//
+//   ];
 
 }]);
 

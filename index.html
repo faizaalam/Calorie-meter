@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>A Pen by Faiza Alam</title>
+  <title>Ramadan Calorie Meter</title>
   <link rel='stylesheet prefetch' href='https://rawgit.com/angular/bower-material/master/angular-material.css'>
   <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -33,25 +33,18 @@
             </div>
           </div>
         </div>
-        <div class="counter-info section row">
+        <!-- <div class="counter-info row" style="display:none;">
           <div ng-controller="AppCtrl" layout="row" ng-cloak>
             <md-content class="col-md-offset-2 col-md-8 col-sm-12 col-lg-8" layout="column" layout-align="center center">
 
               <div class="form-group row">
                 <label class="col-sm-2 form-control-label">Age</label>
                 <div class="col-sm-10">
-                  <input type="number" class="form-control" ng-model="user.age" placeholder="Your Age">
+                  <select class="form-control" ng-options="option for option in ageGroup" ng-model="user.age" ng-change="user.activityChanged()"> {{option}}
+                  </select>
                 </div>
               </div>
-              <div class="form-group row">
-                <labelclass="col-sm-2 form-control-label">Weight</label>
-                  <div class="col-sm-10">
-                    <input type="number" class="form-control" ng-model="user.weight" placeholder="Weight">
-                    <span>Kg</span>
-                  </div>
-              </div>
-
-              <div class="form-group row" layout="row">
+                <div class="form-group row" layout="row">
                 <label class="col-sm-2">Gender</label>
                 <div class="col-sm-10">
                   <div class="radio-inline">
@@ -73,9 +66,11 @@
                   </select>
                 </div>
               </div>
+
+               <h1><span class="lighter">Your mail adress is</span> {{calorieNeedgirl.calorie_needed}}</h1>
             </md-content>
           </div>
-        </div>
+        </div> -->
 
         <div class="row food-items section" ng-controller="mainController">
           <div ng-repeat="item in items.slice(0,8)">
@@ -135,7 +130,7 @@
             </div>
           </div>
         </div>
-        <div class="row section burn-calorie" ng-controller="mainController">
+        <!-- <div class="row burn-calorie" ng-controller="mainController" style="display:none;">
 
           <div class="col-sm-12 col-md-6 col-lg-6 " style="border-right: 2px solid white;">
             <div id="walking-robot">
@@ -162,7 +157,7 @@
               </div>
             </div>
             <div class="walking-shadow"></div>
-            <div class="burning-activity">You should walk 10 minutes to burn excess calories.</div>
+            <div class="burning-activity">You should walk {{}} to burn excess calories.</div>
           </div>
           <div class="col-sm-12 col-md-6 col-lg-6 " style="border-left: 2px solid white;">
             <div id="running-robot">
@@ -189,10 +184,10 @@
               </div>
             </div>
             <div class="running-shadow"></div>
-            <div class="burning-activity">You should walk 10 minutes to burn excess calories.</div>
+            <div class="burning-activity">You should walk {{}} to burn excess calories.</div>
           </div>
 
-        </div>
+        </div> -->
 
       </div>
       <div layout-fill="" layout="column" class="inset toastdemoBasicUsage">
